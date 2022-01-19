@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 200px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-2">
+        <!-- v- para indicar que são atributos especiais providos pelo Vue -->
+
+        <span v-bind:title="message"> 
+            pare o mouse sobre mim e veja a dica interligada dinamicamente
+        </span>
+        <!-- Neste caso, basicamente está sendo dito: “mantenha o atributo title do elemento sempre atualizado em relação à propriedade message da instância Vue”. -->
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: '#app-2', //aqui temos o celetor do container
+            data:{
+                message:'você carregou esta pagina em ' + new Date().toLocaleDateString(), //aq o objeto declarado e so seu respectivo valor
+            }
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>

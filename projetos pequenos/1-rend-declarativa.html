@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 200px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 id="text">{{mensage}}</h1> 
+        <!-- aqui vamos renderizar o que esta no objeto pelo nome declarado -->
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: '#app', //aqui temos o celetor do container
+            data:{
+                mensage:'ola vue!', //aq o objeto declarado e so seu respectivo valor
+            }
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>

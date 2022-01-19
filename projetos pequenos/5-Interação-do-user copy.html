@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 200px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-5">
+        <!-- paea que o usuarios interaja com o aplicatico, pode ser usado o v-on para anexar escultas   a eventos  -->
+        <p>{{mensage}}</p>
+        <button v-on:click='reverseMessage'>Inverter mensagem</button>
+        <!-- o v-on e o mesmo que chamar o evento onclick=""
+        e tambem pode ser chamados outros eventos como mouseUo keyup etc-->
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+           el: '#app-5',
+           data:{
+               mensage: 'Hello World'
+            },
+            methods:{//metodo e onde vamo dar a funcionalidade
+                reverseMessage:function(){
+                    this.mensage = this.mensage.split('').reverse().join('');
+                }
+            }
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 200px 0px;
+        }
+        todo-item{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-7">
+        <ol> 
+            <!-- pegando os itens da lista (groceryList) -->
+            <todo-item 
+            v-for="item in groceryList" 
+            v-bind:todo="item"
+            v-blind="item.id"
+            >
+            </todo-item>
+            
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        //definindo componente com vue
+
+        Vue.component('todo-item',{ //esse nome e o nome do componente(esse nome vai ser uma tag n html) 
+            props:['todo'],
+            //para reutilizarmos os componented podemos passar textos diferentes
+            // passando props
+
+            template: '<li>{{todo.text}}</li>',
+            //aqui vamos definir oqur o componente vai ser no html
+
+        })
+
+        var app7 = new Vue({
+            el:'#app-7',
+            data:{
+                groceryList:[ //itens que serão mostrados no componente
+                    {id:0,text: 'vegetais'},
+                    {id:1,text: 'queijo'},
+                    {id:2,text: 'cebola'},
+                ]
+            }
+        })
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
