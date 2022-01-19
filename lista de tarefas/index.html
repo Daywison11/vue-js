@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>lista de tarefas</h2>
+        <input type="text" v-model="teste">
+        <button @click="adi(teste)">adcionar</button>
+        <div v-if="alerta.done" class="erro">{{alerta.msg}}</div>
+        <ul>
+            <li v-for="todo in todos">
+                <input v-on:change="toggle(todo)"
+                v-bind:checked="todo.done"
+                type="checkbox">
+                <span v-if="!todo.done">{{todo.text}}</span>
+                <span v-else="!todo.done" class="disable">
+                    <strong>{{todo.concluido}}</strong>
+                    {{todo.text}} 
+                </span>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

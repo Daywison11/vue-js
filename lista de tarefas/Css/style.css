@@ -1,0 +1,51 @@
+#app{
+    background-color: rgba(99, 99, 100, 0.842);
+    text-align: center;
+    margin: 150px auto;
+    display: block;
+    width: 50%;
+    border: 1px solid rgba(122, 122, 122, 0.281);
+    box-shadow: 1px 1px 10px dodgerblue;
+}
+
+#app h2{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#app input{
+    background-color: rgba(30, 143, 255, 0);
+    border: 1px solid black;
+}
+
+#app button{
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+li{
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
+    height: 30px;
+    background-color: rgba(160, 160, 160, 0.815);
+    border: 1px solid gray;
+}
+ul{
+    padding: 0;
+}
+.disable{
+    color: gray;
+}
+strong{
+    color: black;
+}
+.erro{
+    background-color: rgba(255, 0, 0, 0.322);
+    height: 30px;
+}
