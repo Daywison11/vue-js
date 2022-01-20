@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo-List</title>
+</head>
+<body>
+    <div id="app">
+        
+        <div class="erro" v-if="erro.done">{{erro.msg}}</div>
+        <h2>Todo Todo-List</h2>
+        <label for="title">Titulo:</label>
+        <input type="text"
+                id="title"
+                v-model="title">
+        <br>
+        <label for="descrition">Descrição:</label>
+        <input type="text"
+               id="descrition"
+               v-model="descrition">
+        <br>
+        <button id="add" v-on:click="adc(title,descrition)">Adicionar</button>
+
+        <ul>
+            <li class="tarefaa"
+                v-for="tarefa in tarefas">
+                
+                <input type="checkbox"
+                 v-on:change="toggle(tarefa)"
+                 class="check" 
+                 v-bind:id="tarefa.id"
+                 v-bind:checked="tarefa.done">
+
+                <label v-bind:for="tarefa.id"  class="texto " v-if="!tarefa.done">
+                    <h3>{{tarefa.title}}</h3>
+                    <p class="descrition">{{tarefa.describe}}</p>
+                </label>
+                <label v-bind:for="tarefa.id"  class="texto disabled" v-else="!tarefa.done">
+                    <h3>{{tarefa.title}}</h3>
+                </label>
+
+                <button class="dell" v-on:click="deletar(tarefa)">x</button>
+            </li>
+            </li>
+        </ul>
+    </div>
+
+    <script src="Js/vue.js"></script>
+    <script src="Js/main.js"></script>
+</body>
+</html>
